@@ -34,24 +34,27 @@ spark-warehouse/
 metastore_db/
 derby.log
 
-# Hadoop checksum files
-*.crc
-
-# Spark Success files
+# Spark Success Files
 _SUCCESS
 
+# Hadoop CRC Files
+*.crc
+
 # ==========================================
-# Generated Data
+# Generated Data (Do Not Commit)
 # ==========================================
 data/bronze/
 data/silver/
 data/gold/
 
-# Uncomment if you don't want to commit the generated CSV
-# data/raw/
+# Ignore generated raw dataset
+data/raw/*
+
+# Keep the raw directory in Git
+!data/raw/.gitkeep
 
 # ==========================================
-# Jupyter
+# Jupyter Notebook
 # ==========================================
 .ipynb_checkpoints/
 
@@ -61,12 +64,12 @@ data/gold/
 .env
 
 # ==========================================
-# macOS resource forks
-# ==========================================
-._*
-
-# ==========================================
-# Temporary files
+# Temporary Files
 # ==========================================
 *.tmp
 *.temp
+
+# ==========================================
+# macOS Resource Files
+# ==========================================
+._*
